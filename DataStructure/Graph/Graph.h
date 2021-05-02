@@ -2,6 +2,7 @@
 #define _GRAPH_H_
 
 #include "Vertex.h"
+#include "Queue.h"
 
 class Graph
 {
@@ -45,6 +46,48 @@ public:
             }
             printf("\n");
             pVertex = pVertex->pNext;
+        }
+    }
+    void initVisited() {
+        Vertex* pCur = vertices;
+        while(NULL != pCur) {
+            pCur->visited = NOT_VISITED;
+            pCur = pCur->pNext;
+        }
+    }
+
+    void dfs(Vertex* vStart) {
+        printf("%d ", vStart->data);
+        vStart->visited = VISITED;
+        Edge* pEdge = vStart->pAdjacency;
+        while(NULL != pEdge) {
+            if(NULL != pEdge->m_pTarget && pEdge->m_pTarget->visited == NOT_VISITED) {
+                dfs(pEdge->m_pTarget);
+            }
+            pEdge = pEdge->pNext;
+        }
+    }
+
+    void bfs(Vertex* vStart) {
+        Queue queue;
+        printf("%d ", vStart->data);
+        vStart->visited = VISITED;
+        queue.enqueue(vStart);
+
+        while(!queue.isEmpty()) {
+            // printf("queue not empty\n");
+            Vertex* pPop = queue.dequeue();
+            Edge* pEdge = pPop->pAdjacency;
+
+            while(NULL != pEdge) {
+                Vertex* pTemp = pEdge->m_pTarget;
+                if(pTemp != NULL && pTemp->visited == NOT_VISITED) {
+                    printf("%d ", pTemp->data);
+                    pTemp->visited = VISITED;
+                    queue.enqueue(pTemp);
+                }
+                pEdge = pEdge->pNext;
+            }
         }
     }
 private:

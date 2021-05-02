@@ -43,6 +43,7 @@ public:
     int index;
     Vertex* pNext;
     Edge* pAdjacency;
+    Vertex* qNext;
 private:
     
 };
