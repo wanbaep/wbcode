@@ -4,6 +4,6 @@
 
 - [자료구조 개념 연습 코드](DataStructure)
 
-- [알고리즘 문제풀이](Algorithm/README.md)
+- [알고리즘 문제풀이](Algorithm)
 
-- [Java](Java/README.md)
+- [Java](Java)
