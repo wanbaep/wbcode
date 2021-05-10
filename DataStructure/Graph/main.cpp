@@ -53,6 +53,7 @@ void test2() {
     printf("BFS: ");
     graph.bfs(v1);
     printf("\n");
+    // graph.prim();
 }
 
 void test1() {

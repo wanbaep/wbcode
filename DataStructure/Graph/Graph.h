@@ -3,6 +3,9 @@
 
 #include "Vertex.h"
 #include "Queue.h"
+#include "PriorityQueue.h"
+
+#define USER_INF 999999
 
 class Graph
 {
@@ -87,6 +90,30 @@ public:
                     queue.enqueue(pTemp);
                 }
                 pEdge = pEdge->pNext;
+            }
+        }
+    }
+
+    void prim(Vertex* startNode) {
+        printf("prim");
+        Vertex* pCur = vertices;
+        while(NULL != pCur) {
+            pCur->key = USER_INF;
+            pCur->parent = NULL;
+        }
+        PriorityQueue queue(10);
+        HeapNode node = {startNode->key, (void*)startNode};
+        queue.enqueue(node);
+        while(!queue.isEmpty()) {
+            HeapNode u = queue.dequeue();
+            pCur = (Vertex*) u.data;
+            Edge* pEdge = pCur->pAdjacency;
+            while(NULL != pEdge) {
+                Vertex* pTarget = pEdge->m_pTarget;
+                if(pTarget->key > pCur->key + pEdge->m_weight) {
+                    pTarget->parent = pCur;
+                    pTarget->key = pCur->key + pEdge->m_weight;
+                }
             }
         }
     }

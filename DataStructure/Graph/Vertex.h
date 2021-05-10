@@ -19,6 +19,8 @@ public:
     Vertex(int inputData)
         : data(inputData), visited(NOT_VISITED), index(-1), pNext(NULL), pAdjacency(NULL)
     {
+        key = 0;
+        parent = NULL;
     }
     ~Vertex();
     void addEdge(Edge* newEdge)
@@ -39,6 +41,8 @@ public:
     }
 
     ElementType data;
+    int key;
+    Vertex* parent;
     int visited;
     int index;
     Vertex* pNext;
