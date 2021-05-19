@@ -30,6 +30,8 @@
 
 - [https://leetcode.com/problems/unique-paths/](https://leetcode.com/problems/unique-paths/)
 
+- [Mycode](UniquePaths/UniquePaths.java)
+
 #877. Stone Game
 
 - [https://leetcode.com/problems/stone-game/](https://leetcode.com/problems/stone-game/)
@@ -37,3 +39,8 @@
 #1444. Number of Ways of Cutting a Pizza
 
 - [https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/](https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/)
+
+MinAbsSum
+- Codility Lesson17
+- [result](https://app.codility.com/demo/results/trainingFWGH8N-92A/)
+- [Mycode](MinAbsSum)

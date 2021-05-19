@@ -4,6 +4,7 @@ using namespace std;
 
 class Solution {
 public:
+    // Palindrome 양쪽에 같은 문자를 넣으면 Palindrome 이 되는 성질을 이용한다
     string longestPalindrome(string s) {
         int maxLength = 0;
         int start = 0, end = 0;
